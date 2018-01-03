@@ -5,6 +5,9 @@ http = require('http').Server(app);
 io = require('socket.io')(http);
 
 
+// port number
+var port = process.env.PORT || 3000;
+
 // ブラウザからのリクエストに関係なく動くnodejs上の処理
 count = 0;
 setInterval(function(){
@@ -15,8 +18,8 @@ setInterval(function(){
 
 // サーバーの起動
 console.log('稼働中...')
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(port, function(){
+  console.log('listening');
 });
 
 
